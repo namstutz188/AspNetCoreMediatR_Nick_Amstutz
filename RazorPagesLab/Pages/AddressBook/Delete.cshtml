@@ -1,0 +1,22 @@
+@page
+@model DeleteModel
+@{
+	ViewData["Title"] = "Delete Address Book Entry";
+}
+
+<h3>You are requesting to delete the following address:</h3>
+
+<form asp-page="Delete"
+    asp-route-id="@Model.Id"
+	method="post">
+	<span>@ViewData["Message"]</span>
+
+    <div>
+			@($"{@Model.Line1} {@Model.City}, {@Model.State} {@Model.PostalCode}")
+	</div>
+
+	<button type="submit"
+			class="btn btn-primary">
+		Delete Address
+	</button>
+</form>
